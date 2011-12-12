@@ -95,6 +95,9 @@ map <leader>t :CommandT<CR>
 " ACK plugin
 nmap <leader>a <Esc>:Ack!<space>
 
+" Load the Gundo window
+map <leader>g :GundoToggle<CR>
+
 " Visual YankRing
 nnoremap <silent> <C-y> :YRShow<CR>
 
