@@ -108,7 +108,7 @@ nnoremap <leader>. :lcd %:p:h<CR>
 nnoremap <space> za
 
 " don't outdent hashes
-inoremap # #
+inoremap # X#
 
 " Paste from clipboard
 map <leader>p "+p
