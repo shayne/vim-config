@@ -80,10 +80,6 @@ map <leader>td <Plug>TaskList
 " python pep8 violations in quickfix window
 let g:pep8_map='<leader>8'
 
-" SuperTab lets us use tab for autocompletion in
-" insert mode
-let g:SuperTabDefaultCompletionType = 'context'
-
 " Python Rope
 map <leader>j :RopeGotoDefinition<CR>
 map <leader>r :RopeRename<CR>
@@ -146,6 +142,19 @@ function! QFixToggle(forced)
 endfunction
 
 nmap <silent> <leader>` :QFix<CR>
+
+
+
+" ==========================================================
+" Plugin Settings
+" ==========================================================
+
+" SuperTab lets us use tab for autocompletion in
+" insert mode
+let g:SuperTabDefaultCompletionType = 'context'
+
+" YankRing history
+let g:yankring_history_dir = '~/.vim'
 
 
 " ==========================================================
