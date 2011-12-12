@@ -189,7 +189,7 @@ set background=dark           " We are using dark background in vim
 set title                     " show title in console title bar
 set wildmenu                  " Menu completion in command mode on <Tab>
 set wildmode=full             " <Tab> cycles between all matching choices.
-set colorcolumn=80
+set colorcolumn=79
 
 " don't bell or blink
 set noerrorbells
@@ -318,7 +318,7 @@ autocmd FileType html,xhtml,xml,css setlocal expandtab shiftwidth=2 tabstop=2 so
 """ Python
 "au BufRead *.py compiler nose
 au FileType python set omnifunc=pythoncomplete#Complete
-au FileType python setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+au FileType python setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 textwidth=79 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
 
 " Omni Completion
