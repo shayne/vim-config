@@ -301,32 +301,15 @@ set directory=~/.vim/swap/
 set undofile
 set undodir=~/.vim/undo/
 
-" Thanks to John Resig for the following 2 things:
-"
-" Tell vime to remember certain things when we exit
-"   '10 : marks will be remembered for up to 10 previously edited files
-"   "100 : will save up to 100 lines for each register
-"   :20 : up to 20 lines of command-line history will be remembered
-"   % : saves and restores the buffer list
-"   n... : where to save the viminfo files
-set viminfo='10,\"100,:20,%,n~/.viminfo
-
-function! ResCur()
-  if line("'\"") <= line("$")
-    normal! g`"
-    return 1
-  endif
-endfunction
-
-augroup resCur
-  autocmd!
-  autocmd BufWinEnter * call ResCur()
-augroup END
-
 
 " ===========================================================
 " FileType specific changes
 " ============================================================
+
+" Remember last location in file, but not for commit messages.
+" see :help last-position-jump
+au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g`\"" | endif
 
 """ Mako/HTML
 autocmd BufNewFile,BufRead *.mako,*.mak,*.jinja2 setlocal ft=html
