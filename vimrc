@@ -265,11 +265,11 @@ silent! !mkdir -p ~/.vim/backup
 silent! !mkdir -p ~/.vim/swap
 silent! !mkdir -p ~/.vim/undo
 set backup
-set backupdir=~/.vim/backup//
-set directory=~/.vim/swap//
+set backupdir=~/.vim/backup/
+set directory=~/.vim/swap/
 " Persistent undos (vim 7.3+)
 set undofile
-set undodir=~/.vim/undo//
+set undodir=~/.vim/undo/
 
 " Thanks to John Resig for the following 2 things:
 "
