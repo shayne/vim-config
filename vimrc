@@ -229,6 +229,7 @@ set foldmethod=indent       " allow us to fold on indents
 set foldlevel=99            " don't fold by default
 
 """" Reading/Writing
+set encoding=utf-8
 set noautowrite             " Never write a file unless I request it.
 set noautowriteall          " NEVER.
 set noautoread              " Don't automatically re-read changed files.
