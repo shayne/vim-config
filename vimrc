@@ -53,8 +53,11 @@ filetype plugin indent on     " required!
 " Shortcuts
 " ==========================================================
 
-" change the leader to be a comma vs slash
+" Change the leader to be a comma vs slash
 let mapleader=","
+
+" Switch to last buffer
+nnoremap <leader><leader> <c-^>
 
 " Bind :W to :w
 command! W :w
