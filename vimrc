@@ -25,6 +25,7 @@ Bundle 'fholgado/minibufexpl.vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'sjl/gundo.vim'
 Bundle 'vim-scripts/TaskList.vim'
+Bundle 'YankRing.vim'
 
 """ Git
 Bundle 'tpope/vim-fugitive'
