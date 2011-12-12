@@ -143,6 +143,15 @@ endfunction
 
 nmap <silent> <leader>` :QFix<CR>
 
+" Show PyFlakes window
+function! ShowPyFlakes()
+     :PyflakesUpdate
+      if !exists("s:pyflakes_qf")
+         :botright cwindow
+      endif
+endfunction
+
+map <Leader>p :call ShowPyFlakes()<CR>
 
 
 " ==========================================================
