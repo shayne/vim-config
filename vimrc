@@ -160,6 +160,9 @@ endfunction
 
 nmap <silent> <leader>` :QFix<CR>
 
+""" PyFlakes
+let g:pyflakes_use_quickfix = 0
+
 " Show PyFlakes window
 function! ShowPyFlakes()
      :PyflakesUpdate
