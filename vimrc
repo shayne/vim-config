@@ -168,7 +168,7 @@ function! ShowPyFlakes()
       endif
 endfunction
 
-map <Leader>p :call ShowPyFlakes()<CR>
+map <Leader>9 :call ShowPyFlakes()<CR>
 
 
 " ==========================================================
