@@ -92,8 +92,14 @@ let g:pep8_map='<leader>8'
 map <leader>j :RopeGotoDefinition<CR>
 map <leader>r :RopeRename<CR>
 
-" Run command-t file search$
-map <leader>t :CommandT<CR>
+""" Command-T
+" double percentage sign in command mode is expanded
+" to directory of current file - http://vimcasts.org/e/14
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+
+nnoremap <silent> <leader>f :CommandTFlush<cr>\|:CommandT<cr>
+nnoremap <silent> <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
+let g:CommandTAcceptSelectionSplitMap='<C-g>'
 
 " ACK plugin
 nmap <leader>a <Esc>:Ack!<space>
