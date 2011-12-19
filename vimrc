@@ -146,19 +146,27 @@ endfunction
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
-" Toggle QuickFix window
+" toggles the quickfix window.
 command -bang -nargs=? QFix call QFixToggle(<bang>0)
 function! QFixToggle(forced)
   if exists("g:qfix_win") && a:forced == 0
     cclose
-    unlet g:qfix_win
   else
-    copen 10
-    let g:qfix_win = bufnr("$")
+    execute "copen " . g:jah_Quickfix_Win_Height
   endif
 endfunction
 
-nmap <silent> <leader>` :QFix<CR>
+" used to track the quickfix window
+augroup QFixToggle
+ autocmd!
+ autocmd BufWinEnter quickfix let g:qfix_win = bufnr("$")
+ autocmd BufWinLeave * if exists("g:qfix_win") && expand("<abuf>") == g:qfix_win | unlet! g:qfix_win | endif
+augroup END
+
+" Set a height for the quickfix menu
+let g:jah_Quickfix_Win_Height = 7
+
+nmap <silent> <leader>` :QFix()<cr>
 
 """ PyFlakes
 let g:pyflakes_use_quickfix = 0
