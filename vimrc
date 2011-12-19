@@ -58,6 +58,9 @@ let mapleader=","
 " Switch to last buffer
 nnoremap <leader><leader> <c-^>
 
+" Close current buffer
+nnoremap <leader>w :bd<esc>
+
 " Bind :W to :w
 command! W :w
 
