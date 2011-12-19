@@ -31,7 +31,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
 
 """ Python
-Bundle 'fs111/pydoc.vim'
+Bundle 'pydoc.vim'
 Bundle 'vim-scripts/pep8'
 Bundle 'kevinw/pyflakes-vim'
 Bundle 'sontek/rope-vim'
