@@ -45,7 +45,12 @@ Bundle 'sontek/rope-vim'
 "  $ make
 Bundle 'git://git.wincent.com/command-t.git'
 
+Bundle 'git://github.com/altercation/vim-colors-solarized.git'
+Bundle 'git://github.com/Lokaltog/vim-powerline.git'
+
 filetype plugin indent on     " required!
+
+set guifont=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline:h14
 
 
 " ==========================================================
@@ -123,8 +128,12 @@ nnoremap <space> za
 " don't outdent hashes
 inoremap # X#
 
-" Paste from clipboard
-map <leader>p "+p
+" Yank text to the OS X clipboard
+noremap <leader>y "*y
+noremap <leader>yy "*Y
+
+" Preserve indentation while pasting text from the OS X clipboard
+noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 
 " Quit window on <leader>q
 nnoremap <leader>q :q<CR>
@@ -225,6 +234,7 @@ set completeopt=menuone,longest,preview
 set pumheight=6             " Keep a small completion window
 
 """ Moving Around/Editing
+set mouse=a                     " yay- let's use a mouse
 set cursorline                  " have a line indicate the cursor location
 set ruler                       " show the cursor position all the time
 set nostartofline               " Avoid moving cursor to BOL when jumping around
@@ -296,8 +306,16 @@ set hlsearch                " Highlight searches by default.
 set incsearch               " Incrementally search while typing a /regex
 
 """" Display
-set t_Co=256
-colorscheme ir_black
+
+let g:Powerline_symbols = 'fancy'
+
+" Solarized Colorscheme Config
+call togglebg#map("<F5>")
+let g:solarized_menu=0
+syntax enable
+set background=dark
+colorscheme solarized
+
 if has("gui_running")
     " Remove menu bar
     set guioptions-=m
@@ -350,7 +368,7 @@ autocmd FileType html,xhtml,xml,css setlocal expandtab shiftwidth=2 tabstop=2 so
 """ Python
 "au BufRead *.py compiler nose
 au FileType python set omnifunc=pythoncomplete#Complete
-au FileType python setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 textwidth=100 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+au FileType python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4 textwidth=100 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 au BufNewFile,BufRead *.tac setlocal ft=python
 au BufRead *.py,*.tac set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
 
